@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Recarrega a página inteira a cada 30 min (1800 s), como reserva -->
+    <meta http-equiv="refresh" content="1800">
+    <title>Dashboard TV - conferencia</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: black; }
+        img { width: 100%; height: 100%; object-fit: contain; }
+    </style>
+</head>
+<body>
+    <img id="dash" src="conferencia.png">
+    <script>
+        // Troca só a imagem a cada 30 s, com número novo na URL para evitar cache
+        setInterval(function () {
+            document.getElementById("dash").src = "conferencia.png?t=" + Date.now();
+        }, 30000);
+    </script>
+</body>
+</html>
